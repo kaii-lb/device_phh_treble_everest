@@ -8,6 +8,10 @@ LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
+# patch by "Christopher A. Williamson" <home@chrisaw.com>
+# Move NoCutoutOverlay to /product - selinux context fix
+LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/overlay
+
 LOCAL_PACKAGE_NAME := NoCutoutOverlay
 LOCAL_SDK_VERSION := current
 

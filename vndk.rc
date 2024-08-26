@@ -14,8 +14,15 @@ service phh_on_boot /system/bin/phh-on-boot.sh
     oneshot
     disabled
 
+service everestos_on_boot /system/bin/everestos-on-boot.sh
+       user root
+       group root system
+       disabled
+       oneshot
+
 on property:sys.boot_completed=1
     start phh_on_boot
+    start everestos_on_boot
     chown wifi system /data/misc/wifi
     chown system wifi /data/misc/wifi/hostapd.conf
 

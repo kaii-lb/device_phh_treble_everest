@@ -36,6 +36,8 @@ int main() {
 
     ioctl(fd, EVIOCGRAB, 1);
 
+	// patch here by "Christopher A. Williamson" <home@chrisaw.com>
+	// Add workaround for oplus alert slider (thanks to PHH)
     struct input_event ev;
     while(read(fd, &ev, sizeof(ev)) != 0) {
         if(!(ev.code == 61 && ev.value == 0)) continue;
@@ -44,11 +46,11 @@ int main() {
         }
         printf("State %d\n", read_tristate());
         if(state == 1) {
-            system("service call audio 41 i32 0 s16 android");
+            system("service call audio 42 i32 0 s16 android");
         } else if(state == 2) {
-            system("service call audio 41 i32 1 s16 android");
+            system("service call audio 42 i32 1 s16 android");
         } else if(state == 3) {
-            system("service call audio 41 i32 2 s16 android");
+            system("service call audio 42 i32 2 s16 android");
         }
     }
 }

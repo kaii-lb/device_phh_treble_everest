@@ -33,7 +33,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 	ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
 	ro.build.version.release=$(PLATFORM_VERSION) \
 	ro.build.version.security_patch=$(PLATFORM_SECURITY_PATCH) \
-	ro.adb.secure=0 \
 	ro.logd.auditd=true \
 	ro.logd.kernel=true \
 
@@ -79,7 +78,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/phh/treble/empty:system/phh/empty \
-	device/phh/treble/phh-on-boot.sh:system/bin/phh-on-boot.sh
+	device/phh/treble/phh-on-boot.sh:system/bin/phh-on-boot.sh \
+	device/phh/treble/everestos-on-boot.sh:system/bin/everestos-on-boot.sh
 
 PRODUCT_PACKAGES += \
 	treble-environ-rc \
@@ -194,7 +194,8 @@ PRODUCT_PACKAGES += \
 
 # Privapp-permissions whitelist for PhhTrebleApp
 PRODUCT_COPY_FILES += \
-	device/phh/treble/privapp-permissions-me.phh.treble.app.xml:system/etc/permissions/privapp-permissions-me.phh.treble.app.xml
+	device/phh/treble/privapp-permissions-me.phh.treble.app.xml:system/etc/permissions/privapp-permissions-me.phh.treble.app.xml \
+	device/phh/treble/sysconfig-me.phh.treble.app.xml:system/etc/sysconfig/sysconfig-me.phh.treble.app.xml
 
 # Remote debugging
 PRODUCT_COPY_FILES += \
