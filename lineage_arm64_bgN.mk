@@ -2,7 +2,7 @@ TARGET_GAPPS_ARCH := arm64
 include build/make/target/product/aosp_arm64.mk
 $(call inherit-product, device/phh/treble/base.mk)
 
-$(call inherit-product, device/phh/treble/gapps.mk)
+# $(call inherit-product, device/phh/treble/gapps.mk) # removed cuz it doesn't actually inherit anything lmfao
 $(call inherit-product, device/phh/treble/lineage.mk)
 
 PRODUCT_NAME := lineage_arm64_bgN
