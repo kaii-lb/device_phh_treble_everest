@@ -1,6 +1,6 @@
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, vendor/lineage/config/BoardConfigSoong.mk)
-# $(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk)
+# $(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk) # removed cuz it gets force imported by build/make
 include vendor/lineage/build/core/config.mk
 
 # Bootanimation (force 1080p - 1080x1920)
