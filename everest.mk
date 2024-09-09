@@ -6,6 +6,9 @@ include vendor/lineage/build/core/config.mk
 # Bootanimation (force 1080p - 1080x1920)
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# jemalloc thing | might fix LTE?
+PRODUCT_USE_SCUDO := true
+
 # Kernel
 TARGET_NO_KERNEL_IMAGE := true
 TARGET_NO_KERNEL_OVERRIDE := true
@@ -31,7 +34,7 @@ EVEREST_BUILD_TYPE := OFFICIAL
 TARGET_SUPPORTS_BLUR := true
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
-# TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # SELinux
 SELINUX_IGNORE_NEVERALLOWS := true
