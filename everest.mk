@@ -36,6 +36,10 @@ TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
+# Freeform Multiwindow
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml
+
 # SELinux
 SELINUX_IGNORE_NEVERALLOWS := true
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true

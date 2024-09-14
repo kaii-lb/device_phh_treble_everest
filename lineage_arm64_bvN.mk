@@ -12,9 +12,8 @@ PRODUCT_MODEL := EverestOS Vanilla
 
 WITH_GAPPS := false
 
-TARGET_PREBUILT_PIXEL_LAUNCHER := false
-TARGET_INCLUDE_PIXEL_LAUNCHER := false
 TARGET_DEFAULT_PIXEL_LAUNCHER := false
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # Overwrite the inherited "emulator" characteristics
 PRODUCT_CHARACTERISTICS := device
@@ -24,6 +23,6 @@ PRODUCT_PACKAGES += \
         $(PRODUCT_PACKAGES), \
         com.android.wallpaper) \
 
-PRODUCT_PACKAGES += \
-  WallpaperPickerGoogleRelease \
+# PRODUCT_PACKAGES += \
+#  WallpaperPickerGoogleRelease \
 	
