@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ROOTDIR=~/everestos-kaii
+TOKEN=$(cat $ROOTDIR/keytoken.txt)
 
 resetAllPatches() {
 	$ROOTDIR/treblestuff/patches/apply.sh . personal --reset
@@ -20,9 +21,13 @@ git clone https://github.com/kaii-lb/treble_everest.git treblestuff/ && echo && 
 
 resetAllPatches
 
-# signing no longer needed cuz pif passes without it now but still
-rm -rf vendor/lineage/signing/keys
-git clone https://github.com/kaii-lb/everestos_keys.git vendor/lineage/signing/keys && echo && echo "--> Added personal signing keys"
+if [[ ! -z "${TOKEN}" ]]; then
+	# signing no longer needed cuz pif passes without it now but still
+	rm -rf vendor/lineage/signing/keys
+	git clone "https://${TOKEN}@github.com/kaii-lb/everestos_keys.git" vendor/lineage/signing/keys && echo && echo "--> Added personal signing keys"
+else
+	echo "--> No token provided! Skipping signing keys cloning..."
+fi
 
 applyAllPatches
 
